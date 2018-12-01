@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iomanip>
 
-const uint64_t CHUNK_SIZE = INT32_MAX / 2;
+const uint16_t CHUNK_SIZE = -1;
 
 int main(int argc, char* argv[])
 {
@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
 		std::cout << "\rFile progress " << (int)((float)index / (float)file_size * 100) << "%";
 
 		// Set size to read and hash
-		uint32_t size_to_read = CHUNK_SIZE;
+		uint16_t size_to_read = CHUNK_SIZE;
 		if (!diff)
 			break;
 		else if (diff < CHUNK_SIZE)
